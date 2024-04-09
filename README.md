@@ -1,7 +1,16 @@
-# Data-Visualization
-In this project, we implemented the following assignment:
+# Data Visualization Project
 
-Design and implement a system for the visualization of relational and high-dimensional data.
+## Introduction
+This repository contains code and datasets for a project focused on visualizing relational and high-dimensional data.
+
+## Folder Structure
+- `code/`: Contains all project code, divided into parts.
+  - `part1`: Code for Step 1.
+  - `part2`: Code for Step 2.
+  - ...
+- `data/`: Holds all datasets used in the project.
+
+## Implementation Steps
 
 ## Step 1: Read and draw a graph
 
@@ -79,3 +88,6 @@ You can choose to implement any number of the following tasks.
 * Return to the layered layout. Implement drawing of the edges using curves (e.g. splines or any other choice of yours) to improve the quality of the result. You can check yEd on how the final drawings may look like.
 * Return to the multilayer/clustered graphs visualization. Expand your method to work for more than two clusters. For this, you need to find a way to arrange an arbitrary number of boxes (containing layouts of the layers) next to each other. We do not recommend just to stack them vertically or horizontally. ✅
 * Return to your edge-bundling implementation. Implement the Gaussian smoothing to make your bundles look better.
+
+## Project Report
+- `project_report.pdf`: The project report contains detailed descriptions of all the steps outlined in the implementation section, including objectives, methodology, results, and conclusions.
