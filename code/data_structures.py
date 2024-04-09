@@ -40,22 +40,6 @@ class Graph:
             if vertex.id == id:
                 return vertex
         return None
-    def remove_edge(self, start, end):
-        for edge in self.edges:
-            if edge.start == start and edge.end == end:
-                self.edges.remove(edge)
-
-    def remove_vertex(self, id):
-        for vertex in self.vertices:
-            if vertex.id == id:
-                self.vertices.remove(vertex)
-
-    def update_x_y(self,id,x,y):
-      for vertex in self.vertices:
-            if vertex.id == id:
-              vertex.x = x
-              vertex.y = y
-
 
     def visualize_graph(self,custom_figsize,radius): # O(V + V + E) = O(2V + E) = O(V + E)
         self.place_vertices_in_circle(radius) # O(V)
@@ -228,6 +212,21 @@ class FVertex(Vertex):
 ################## classes parts 4,6 & 7  #####################
 
 class FSGraph(Graph):
+    def remove_edge(self, start, end):
+        for edge in self.edges:
+            if edge.start == start and edge.end == end:
+                self.edges.remove(edge)
+
+    def remove_vertex(self, id):
+        for vertex in self.vertices:
+            if vertex.id == id:
+                self.vertices.remove(vertex)
+
+    def update_x_y(self,id,x,y):
+      for vertex in self.vertices:
+            if vertex.id == id:
+              vertex.x = x
+              vertex.y = y
     def visualize_graph(self, custom_figsize, radius):  # O(V + V + E) = O(2V + E) = O(V + E)
 
       self.place_vertices_in_circle(radius)  # O(V)
