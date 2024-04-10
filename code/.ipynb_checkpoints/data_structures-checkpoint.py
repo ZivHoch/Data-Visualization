@@ -206,11 +206,24 @@ class FVertex(Vertex):
     def add_children(self,child):
         self.children.append(child)
 
+################## classes parts 4  #####################
 
+class Graph_part_four:
+    def __init__(self):
+        self.vertices = []
+        self.edges = []
 
-################## classes parts 4,6 & 7  #####################
+    def add_vertex(self, vertex):
+        self.vertices.append(vertex)
 
-class FSGraph(Graph):
+    def add_edge(self, edge):
+        self.edges.append(edge)
+
+    def get_vertex(self, id):
+        for vertex in self.vertices:
+            if vertex.id == id:
+                return vertex
+
     def remove_edge(self, start, end):
         for edge in self.edges:
             if edge.start == start and edge.end == end:
@@ -226,6 +239,8 @@ class FSGraph(Graph):
             if vertex.id == id:
               vertex.x = x
               vertex.y = y
+
+
     def visualize_graph(self, custom_figsize, radius):  # O(V + V + E) = O(2V + E) = O(V + E)
 
       self.place_vertices_in_circle(radius)  # O(V)
@@ -242,6 +257,60 @@ class FSGraph(Graph):
       for edge in self.edges:  # O(E)
           start = edge.start
           end = edge.end
+          dx = end.x - start.x
+          dy = end.y - start.y
+          ax.annotate("", xy=(end.x, end.y), xytext=(start.x, start.y),
+                      arrowprops=dict(arrowstyle="->", linewidth=2.0, color='gray'))
+
+      ax.set_xlabel('X')
+      ax.set_ylabel('Y')
+      ax.set_title('Graph Visualization with Edge Direction')
+      ax.grid(True)
+
+
+    def place_vertices_in_circle(self,radius): # O(V)
+        num_vertices = len(self.vertices)
+        radius = radius  # Radius of the circle
+        center_x = 0
+        center_y = 0
+        angle_increment = 2 * np.pi / num_vertices
+
+        # Place vertices in a bit of randomized circle
+        for i, vertex in enumerate(self.vertices): # O(V)
+            angle = i * angle_increment
+            vertex.x = center_x + radius * np.cos(angle)
+            vertex.y = center_y + radius * np.sin(angle)
+################## classes parts 6 & 7  #####################
+
+class FSGraph(Graph):
+    def remove_edge(self, start, end):
+        for edge in self.edges:
+            if edge.start == start and edge.end == end:
+                self.edges.remove(edge)
+
+    def remove_vertex(self, id):
+        if id in self.vertices:
+            self.vertices.pop(id)
+
+    def update_x_y(self,id,x,y):
+        self.vertices[id].x = x
+        self.vertices[id].y = y
+    def visualize_graph(self, custom_figsize, radius):  # O(V + V + E) = O(2V + E) = O(V + E)
+
+      self.place_vertices_in_circle(radius)  # O(V)
+
+      fig, ax = plt.subplots(figsize=(custom_figsize, custom_figsize))  # Adjust width and height as needed
+      # Plot Vertices
+      scaling_factor = 1 / len(self.vertices)
+      for vertex in self.vertices.values():  # O(V)
+          ax.scatter(vertex.x, vertex.y, color='blue', zorder=2, s=scaling_factor * 40000 * (custom_figsize / 15),
+                    edgecolors='black')
+          ax.text(vertex.x, vertex.y, str(vertex.id), fontsize=(scaling_factor * 40000 * (custom_figsize / 15)) / 100,
+                  ha='center', va='center', zorder=len(self.vertices) * scaling_factor * 2, color='white')
+      # Plot edges with direction
+      for edge in self.edges:  # O(E)
+          start = self.vertices[edge.start.id]
+          end = self.vertices[edge.end.id]
           dx = end.x - start.x
           dy = end.y - start.y
           ax.annotate("", xy=(end.x, end.y), xytext=(start.x, start.y),
