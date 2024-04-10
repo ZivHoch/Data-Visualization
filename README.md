@@ -90,4 +90,4 @@ You can choose to implement any number of the following tasks.
 * Return to your edge-bundling implementation. Implement the Gaussian smoothing to make your bundles look better.
 
 ## Project Report
-- `Data_Visualization_Final_Hochman_psara_Andrikopoulos.pdf`: The project report contains detailed descriptions of all the steps outlined in the implementation section, including objectives, methodology, results, and conclusions.
+- `Data_Visualization_Final_Hochman_Psara_Andrikopoulos.pdf`: The project report contains detailed descriptions of all the steps outlined in the implementation section, including objectives, methodology, results, and conclusions.
