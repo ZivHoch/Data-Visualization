@@ -85,7 +85,7 @@ You can choose to implement any number of the following tasks.
 * Return to the tree layout. Which quality metric can be additionally optimized to improve the layouts your have constructed? Implement a suggested improvement and evaluate the results.
 * Return to the force-directed algorithm. Implement the speed-up of computing repulsive forces using quad-tree. Measure the time that the layout algorithm takes for N iterations with and without speed up. Discuss your results.
 * Return to the layered layout. Implement the step of node positioning using quadratic programming. Get creative: propose your own method for node positioning. Compare the results.
-* Return to the layered layout. Implement drawing of the edges using curves (e.g. splines or any other choice of yours) to improve the quality of the result. You can check yEd on how the final drawings may look like.
+* Return to the layered layout. Implement drawing of the edges using curves (e.g. splines or any other choice of yours) to improve the quality of the result. You can check yEd on how the final drawings may look like.✅
 * Return to the multilayer/clustered graphs visualization. Expand your method to work for more than two clusters. For this, you need to find a way to arrange an arbitrary number of boxes (containing layouts of the layers) next to each other. We do not recommend just to stack them vertically or horizontally. ✅
 * Return to your edge-bundling implementation. Implement the Gaussian smoothing to make your bundles look better.
 
